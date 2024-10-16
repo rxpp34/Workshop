@@ -1,0 +1,138 @@
+body {
+    background-color: #f0f2f5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#MainDiv {
+    width: 1000px;
+    height: 800px;
+    border: 2px solid #9054e3;
+    background-color: #9054e3;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+#MainDiv-title{
+    font-family: "Nunito";
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-top: 5%;
+}
+
+#Questions
+{
+    width: 90%;
+    margin-top: 30px;
+}
+
+
+#Question-title
+{
+    width: 100%;
+    border: 2px solid white;
+    border-radius: 15px;
+    height: 80px;
+    background-color: white;
+    color: #9054e3;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Response
+{
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 40px;
+}
+
+.Response-item
+{
+    width: 100%;
+    border: 2px solid #431880;
+    background-color: #431880;
+    border-radius: 15px;
+    color:  white;
+    margin-top: 20px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    cursor: grab;
+
+}
+
+.Response-item:hover
+{
+    border: 6px solid white;
+}
+
+.Response-item.selected {
+    border: 6px solid white; /* Bordure blanche lorsque sélectionnée */
+  }
+
+#BoutonDiv
+{
+    width: 30%;
+    margin-top: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#BoutonDiv button {
+    background-color: white;
+    border: 2px solid white;
+    color: #431880;
+    border-radius: 10px;
+    width: 48%;
+    font-family: "Nunito";
+    font-size: 1.2rem;
+    font-weight: 800;
+    padding-inline: 20px;
+    padding-bottom: 10px;
+}
+
+#FlagCorrect 
+{
+    width: 40%;
+    background-color: greenyellow;
+    border: 3px solid green;
+    color: green;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+#FlagIncorrect 
+{
+    width: 40%;
+    background-color: orange;
+    border: 3px solid red;
+    color: red;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+button:disabled {
+    background-color: #ccc;  /* Couleur grisée pour un bouton désactivé */
+    cursor: not-allowed;     /* Icône de curseur indiquant que le bouton est désactivé */
+    opacity: 0.6;            /* Rendre le bouton légèrement transparent */
+  }
