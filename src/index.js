@@ -6,6 +6,7 @@ import './index.css';
 import LandingPage from './Landingpage';
 import ArticlePage from './ArticlePage';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Stop from './Stop';
 
 
 
@@ -21,6 +22,7 @@ root.render(
         <Route path="/LandingPage" element={<LandingPage/>}/>
         <Route path="/ArticlePage" element={<ArticlePage/>}/>
         <Route path="/Quizz" element={<Quizz/>}/>
+        <Route path="/Stop" element={<Stop/>}/>
       </Routes>
     </Router>
   </React.StrictMode>,

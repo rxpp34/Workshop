@@ -1,54 +1,101 @@
-/* Styles généraux pour le corps */
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f2f5;
-  }
-  
-  /* Conteneur du formulaire */
-  .login-container {
-    background-color: #431880; /* Couleur de fond bleu */
-    padding: 40px;
-    border-radius: 15px; /* Bords arrondis */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre */
-    width: 100%;
-    width: 600px;
-    color: white; /* Texte en blanc pour contraster avec le bleu */
-  }
-  
-  /* Titres et textes du formulaire */
-  .login-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  /* Style des champs de formulaire */
-  .form-group label {
-    color: white; /* Couleur du texte des labels en blanc */
-  }
-  
-  .form-control {
-    border-radius: 10px; /* Bords arrondis pour les champs */
-    padding: 10px;
-    border: none; /* Suppression des bordures par défaut */
-    margin-bottom: 15px;
-  }
-  
-  /* Bouton de soumission */
-  .btn-primary {
-    background-color: #9054e3; /* Bleu plus foncé pour le bouton */
-    border: none;
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  
-  .btn-primary:hover {
-    background-color: #9054e3; /* Couleur au survol */
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  padding: 20px 0;
+  background-color: #f0e6ff;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+}
+
+nav a,
+.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #431880;
+  background-color: white;
+  transition: all 0.3s ease;
+  border: 2px solid #431880;
+}
+
+nav a:hover,
+.btn:hover {
+  background-color: #431880;
+  color: white;
+}
+
+.hero {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #eaeaea;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  background-color: #1a1a2e;
+  color: #ffffff;
+}
+
+.dark-mode header {
+  background-color: #2a2a4a;
+}
+
+.dark-mode nav a,
+.dark-mode .btn {
+  background-color: #431880;
+  color: white;
+  border-color: #9054e3;
+}
