@@ -1,17 +1,16 @@
-import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function ArticlePage() {
-  const [darkMode, setDarkMode] = React.useState(false);
-  const { ageGroup } = useParams();
+  const [darkMode, setDarkMode] = React.useState(false)
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
+    setDarkMode(!darkMode)
+  }
 
   const headerStyle = {
     backgroundColor: darkMode ? '#2a2a4a' : '#f0e6ff',
-  };
+  }
 
   const navLinkStyle = {
     padding: '10px 20px',
@@ -21,33 +20,12 @@ export default function ArticlePage() {
     backgroundColor: darkMode ? '#431880' : 'white',
     transition: 'all 0.3s ease',
     border: `2px solid ${darkMode ? '#9054e3' : '#431880'}`,
-  };
+  }
 
-  const articleContent = ageGroup === '18-plus' ? (
-    <>
-      <h2>Les dangers des réseaux sociaux pour les adultes</h2>
-      <p>Les réseaux sociaux sont devenus une partie intégrante de notre vie quotidienne, mais ils présentent également des risques pour les adultes :</p>
-      <ul>
-        <li>Addiction et perte de temps : L'utilisation excessive des réseaux sociaux peut entraîner une dépendance et une perte de productivité.</li>
-        <li>Cyberharcèlement : Même les adultes peuvent être victimes de harcèlement en ligne, ce qui peut avoir des conséquences graves sur la santé mentale.</li>
-        <li>Vol d'identité : Les informations personnelles partagées sur les réseaux sociaux peuvent être utilisées pour usurper votre identité.</li>
-        <li>Impact sur la carrière : Des publications inappropriées peuvent nuire à votre réputation professionnelle et affecter vos opportunités d'emploi.</li>
-        <li>Désinformation : La propagation rapide de fausses informations sur les réseaux sociaux peut influencer les opinions et les décisions de manière négative.</li>
-      </ul>
-    </>
-  ) : (
-    <>
-      <h2>Les dangers des réseaux sociaux pour les jeunes</h2>
-      <p>Les réseaux sociaux peuvent être amusants, mais il est important de connaître les risques :</p>
-      <ul>
-        <li>Cyberharcèlement : Des personnes peuvent être méchantes en ligne et te faire du mal.</li>
-        <li>Rencontres dangereuses : Certaines personnes en ligne ne sont pas qui elles prétendent être.</li>
-        <li>Partage excessif : Faire attention à ne pas partager trop d'informations personnelles.</li>
-        <li>Addiction : Passer trop de temps sur les réseaux sociaux peut affecter tes études et tes relations réelles.</li>
-        <li>Comparaison sociale : Ne pas oublier que ce que les gens montrent en ligne n'est pas toujours la réalité.</li>
-      </ul>
-    </>
-  );
+  const linkStyle = {
+    color: darkMode ? '#9054e3' : '#431880',
+    textDecoration: 'underline',
+  }
 
   return (
     <div style={{
@@ -68,7 +46,7 @@ export default function ArticlePage() {
           alignItems: 'center',
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <img src="/SocialeSafe.png" alt="Logo Social Safe" style={{ width: '40px', height: '40px', borderRadius: '50%' }} />
+            <img src="/placeholder.svg?height=40&width=40" alt="Logo Social Safe" style={{ width: '40px', height: '40px', borderRadius: '50%' }} />
             <span style={{ fontSize: '24px', fontWeight: 'bold', color: '#431880' }}>Social Safe</span>
           </div>
           <nav style={{ display: 'flex', gap: '10px' }}>
@@ -87,11 +65,30 @@ export default function ArticlePage() {
           Les dangers des réseaux sociaux
         </h1>
         <article style={{ fontSize: '18px', lineHeight: '1.6', color: darkMode ? '#ffffff' : '#431880' }}>
-          {articleContent}
+          <h2>Les risques liés à l'utilisation des réseaux sociaux</h2>
+          
+          <p>Les réseaux sociaux font désormais partie intégrante de notre vie quotidienne, mais leur utilisation n'est pas sans risques. Voici quelques-uns des principaux dangers identifiés par les experts :</p>
+          
+          <h3>1. Cyberharcèlement et intimidation en ligne</h3>
+          <p>Selon une étude de l'UNICEF, un tiers des jeunes dans 30 pays déclarent avoir été victimes de cyberharcèlement. Ce phénomène peut avoir des conséquences graves sur la santé mentale des victimes, entraînant stress, anxiété et dépression. <a href="https://www.unicef.fr/article/le-cyber-harcelement-qu-est-ce-que-c-est/" style={linkStyle} target="_blank" rel="noopener noreferrer">[Source: UNICEF]</a></p>
+
+          <h3>2. Addiction et impact sur la santé mentale</h3>
+          <p>L'utilisation excessive des réseaux sociaux peut entraîner une forme d'addiction. Une étude publiée dans la revue "Cyberpsychology, Behavior, and Social Networking" a montré que l'utilisation intensive de Facebook était associée à une diminution du bien-être et une augmentation des symptômes dépressifs. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0747563216307543" style={linkStyle} target="_blank" rel="noopener noreferrer">[Source: Science Direct]</a></p>
+
+          <h3>3. Désinformation et fake news</h3>
+          <p>La propagation rapide de fausses informations sur les réseaux sociaux est un problème majeur. Selon une étude du MIT, les fausses nouvelles se propagent 6 fois plus vite que les vraies sur Twitter. Cela peut avoir des conséquences importantes sur l'opinion publique et la prise de décision. <a href="https://www.sciencespo.fr/fr/actualites/actualit%C3%A9s/comment-lutter-contre-la-desinformation-sur-les-reseaux-sociaux/4955" style={linkStyle} target="_blank" rel="noopener noreferrer">[Source: Sciences Po]</a></p>
+
+          <h3>4. Atteinte à la vie privée</h3>
+          <p>Les réseaux sociaux collectent une quantité importante de données personnelles. Selon la CNIL, 71% des Français se disent préoccupés par le niveau de protection de leurs données personnelles sur Internet. Il est crucial de bien paramétrer ses comptes et de réfléchir avant de partager des informations sensibles. <a href="https://www.cnil.fr/fr/les-conseils-de-la-cnil-pour-mieux-maitriser-son-exposition-sur-les-reseaux-sociaux" style={linkStyle} target="_blank" rel="noopener noreferrer">[Source: CNIL]</a></p>
+
+          <h3>5. Impact sur l'estime de soi et comparaison sociale</h3>
+          <p>Une étude publiée dans le "Journal of Social and Clinical Psychology" a montré que la réduction du temps passé sur les réseaux sociaux peut diminuer les sentiments de solitude et de dépression. La comparaison constante avec les autres peut avoir un impact négatif sur l'estime de soi, en particulier chez les jeunes. <a href="https://www.psychologies.com/Moi/Se-connaitre/Estime-de-soi/Articles-et-Dossiers/L-impact-des-reseaux-sociaux-sur-l-estime-de-soi" style={linkStyle} target="_blank" rel="noopener noreferrer">[Source: Psychologies]</a></p>
+
+          <p>Il est important de prendre conscience de ces risques et d'adopter une utilisation responsable des réseaux sociaux. Cela passe par une éducation aux médias, une gestion du temps passé en ligne, et une réflexion critique sur les contenus consommés et partagés.</p>
         </article>
         <div style={{ marginTop: '40px', textAlign: 'center' }}>
           <Link 
-            to={ageGroup === '18-plus' ? '/quiz-18-plus' : '/quiz-moins-18'} 
+            to="/Quizz"
             style={{...navLinkStyle, backgroundColor: '#431880', color: 'white', display: 'inline-block', fontSize: '18px'}}
           >
             Commencer le Quiz
@@ -105,5 +102,5 @@ export default function ArticlePage() {
         </div>
       </footer>
     </div>
-  );
+  )
 }
