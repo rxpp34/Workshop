@@ -96,11 +96,11 @@ const QuizPage = () => {
         
         {/* Video section */}
         <div style={{ marginTop: '40px', textAlign: 'center' }}>
-          <h2 style={{ color: darkMode ? '#fff' : '#000' }}>Vidéo explicative</h2>
-          <div style={{ position: 'relative', paddingBottom: '56.25%', height: '0' }}>
+          <h2 style={{ color: darkMode ? '#fff' : '#000', marginBottom: '10px' }}>Vidéo explicative</h2> {/* Réduit à 10px */}
+          <div style={{ position: 'relative', paddingBottom: '56.25%', height: '0', maxWidth: '800px', margin: '0 auto' }}>
             <iframe 
-              style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%' }}
-              src="https://www.youtube.com/embed/xrpVBuUDS1s" // URL mise à jour
+              style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '450px' }} // Hauteur fixe
+              src="https://www.youtube.com/embed/xrpVBuUDS1s"
               title="Vidéo sur les risques des réseaux sociaux"
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -110,8 +110,8 @@ const QuizPage = () => {
         </div>
 
         {/* Articles section */}
-        <div style={{ marginTop: '40px' }}>
-          <h2 style={{ textAlign: 'center', color: darkMode ? '#fff' : '#000' }}>Articles sur les risques</h2>
+        <div style={{ marginTop: '-200px' }}> {/* Réduction de l'espace entre la vidéo et les articles */}
+          <h2 style={{ textAlign: 'center', color: darkMode ? '#fff' : '#000', marginBottom: '20px' }}>Articles sur les risques</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
             {articles.map((article, index) => (
               <div key={index} style={{ 
