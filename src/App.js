@@ -100,7 +100,7 @@ function App() {
               </p>
             </div>
             <div style={{ marginTop: '20px', width: '100%' }}> {/* Ajuster la largeur ici */}
-              <a href="/quiz18" style={{ // Ajout de l'élément <a> pour le lien
+              <a href="/PreQuizz" style={{ // Ajout de l'élément <a> pour le lien
                 padding: '10px 20px', 
                 backgroundColor: '#fff', 
                 color: '#431880', 
@@ -112,7 +112,7 @@ function App() {
                 maxWidth: '300px', // Largeur maximale pour éviter qu'ils soient trop larges
                 textAlign: 'center' // Centrer le texte du lien
               }}>
-                Commencer le Quiz 18+
+                Commencer le Quiz +18 ans
               </a>
             </div>
           </div>
@@ -135,7 +135,7 @@ function App() {
               </p>
             </div>
             <div style={{ marginTop: '20px', width: '100%' }}> {/* Ajuster la largeur ici */}
-              <a href="/quiz-18" style={{ // Ajout de l'élément <a> pour le lien
+              <a href="/" style={{ // Ajout de l'élément <a> pour le lien
                 padding: '10px 20px', 
                 backgroundColor: '#fff', 
                 color: '#431880', 
@@ -161,5 +161,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
