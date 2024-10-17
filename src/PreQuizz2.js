@@ -76,9 +76,9 @@ const QuizPage = () => {
         <h1 style={{ textAlign: 'center', color: '#431880' }}>Les risques liés aux réseaux sociaux</h1>
         
         {/* Video section */}
-        <div style={{ marginTop: '40px', textAlign: 'center' }}>
-          <h2 style={{ color: darkMode ? '#fff' : '#000', marginBottom: '10px' }}>Vidéo explicative</h2> {/* Réduit à 10px */}
-          <div style={{ position: 'relative', paddingBottom: '56.25%', height: '0', maxWidth: '800px', margin: '0 auto' }}>
+        <div style={{ marginTop: '30px', textAlign: 'center' }}> {/* Réduit l'espace en haut */}
+          <h2 style={{ color: darkMode ? '#fff' : '#000', marginBottom: '20px' }}>Vidéo explicative</h2> {/* Réduction à 5px */}
+          <div style={{ position: 'relative', paddingBottom: '36.25%', height: '0', maxWidth: '800px', margin: '0 auto' }}>
             <iframe 
               style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '450px' }} // Hauteur fixe
               src="https://www.youtube.com/embed/-PD-0J50MaQ"
@@ -90,10 +90,8 @@ const QuizPage = () => {
           </div>
         </div>
 
-        
-
         {/* Test button */}
-        <div style={{ textAlign: 'center', marginTop: '-200px', marginBottom: '70px' }}>
+        <div style={{ textAlign: 'center', marginTop: '20px', marginBottom: '70px' }}> {/* Réduction de l'espace entre la vidéo et le bouton */}
           <a href="/Quizz" style={{
             padding: '15px 30px',
             backgroundColor: '#431880',
