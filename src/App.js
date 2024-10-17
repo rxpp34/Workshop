@@ -135,7 +135,7 @@ function App() {
               </p>
             </div>
             <div style={{ marginTop: '20px', width: '100%' }}> {/* Ajuster la largeur ici */}
-              <a href="/" style={{ // Ajout de l'élément <a> pour le lien
+              <a href="/PreQuizz2" style={{ // Ajout de l'élément <a> pour le lien
                 padding: '10px 20px', 
                 backgroundColor: '#fff', 
                 color: '#431880', 

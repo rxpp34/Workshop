@@ -2,9 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import Quizz from './Quizz';
-import './index.css';
-import LandingPage from './Landingpage';
-import ArticlePage from './ArticlePage';
+import PreQuizz from './PreQuizz-';
+import PreQuizz2 from './PreQuizz2';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Stop from './Stop';
 
@@ -19,8 +18,8 @@ root.render(
     <Router>
       <Routes>
         <Route path="/" index element={<App/>}/>
-        <Route path="/LandingPage" element={<LandingPage/>}/>
-        <Route path="/ArticlePage" element={<ArticlePage/>}/>
+        <Route path="/PreQuizz" element={<PreQuizz/>}/>
+        <Route path="/PreQuizz2" element={<PreQuizz2/>}/>
         <Route path="/Quizz" element={<Quizz/>}/>
         <Route path="/Stop" element={<Stop/>}/>
       </Routes>

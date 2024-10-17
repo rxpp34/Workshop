@@ -36,25 +36,6 @@ const QuizPage = () => {
     setDarkMode(!darkMode);
   };
 
-  // Array of real articles about social network risks
-  const articles = [
-    {
-      title: "Cyberharcèlement sur les réseaux sociaux",
-      description: "Comprendre et prévenir le cyberharcèlement sur les plateformes sociales.",
-      link: "https://www.cybermalveillance.gouv.fr/tous-nos-contenus/bonnes-pratiques/reseaux-sociaux"
-    },
-    {
-      title: "Vol d'identité en ligne",
-      description: "Comment protéger son identité sur les réseaux sociaux et éviter le vol de données personnelles.",
-      link: "https://www.info.gouv.fr/actualite/reseaux-sociaux-comment-proteger-les-jeunes"
-    },
-    {
-      title: "Addiction aux réseaux sociaux",
-      description: "Les signes et les conséquences de la dépendance aux médias sociaux.",
-      link: "https://www.ameli.fr/assure/sante/themes/addiction-ecrans/definition-facteurs-favorisants-consequences"
-    }
-  ];
-
   return (
     <div style={{ backgroundColor: darkMode ? '#1a1a2e' : '#f9f9f9', width: '100vw', minHeight: '100vh', margin: '0', padding: '0' }}>
       {/* Header */}
@@ -100,7 +81,7 @@ const QuizPage = () => {
           <div style={{ position: 'relative', paddingBottom: '56.25%', height: '0', maxWidth: '800px', margin: '0 auto' }}>
             <iframe 
               style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '450px' }} // Hauteur fixe
-              src="https://www.youtube.com/embed/xrpVBuUDS1s"
+              src="https://www.youtube.com/embed/-PD-0J50MaQ"
               title="Vidéo sur les risques des réseaux sociaux"
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -109,31 +90,10 @@ const QuizPage = () => {
           </div>
         </div>
 
-        {/* Articles section */}
-        <div style={{ marginTop: '-200px' }}> {/* Réduction de l'espace entre la vidéo et les articles */}
-          <h2 style={{ textAlign: 'center', color: darkMode ? '#fff' : '#000', marginBottom: '20px' }}>Articles sur les risques</h2>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
-            {articles.map((article, index) => (
-              <div key={index} style={{ 
-                width: 'calc(33% - 20px)', 
-                marginBottom: '20px', 
-                backgroundColor: darkMode ? '#2a2a3e' : '#fff',
-                padding: '20px',
-                borderRadius: '8px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
-              }}>
-                <h3 style={{ color: '#431880' }}>{article.title}</h3>
-                <p style={{ color: darkMode ? '#ddd' : '#333' }}>
-                  {article.description}
-                </p>
-                <a href={article.link} target="_blank" rel="noopener noreferrer" style={{ color: '#9054e3', textDecoration: 'none' }}>Lire l'article</a>
-              </div>
-            ))}
-          </div>
-        </div>
+        
 
         {/* Test button */}
-        <div style={{ textAlign: 'center', marginTop: '40px', marginBottom: '70px' }}>
+        <div style={{ textAlign: 'center', marginTop: '-200px', marginBottom: '70px' }}>
           <a href="/Quizz" style={{
             padding: '15px 30px',
             backgroundColor: '#431880',
