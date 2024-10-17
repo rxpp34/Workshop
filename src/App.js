@@ -1,118 +1,165 @@
-import React from "react";
-export default function LandingPage() {
+import React, { useState } from 'react';
 
-  const [darkMode, setDarkMode] = React.useState(false);
+// Style pour les liens de navigation
+const navLinkStyle = {
+  textDecoration: 'none',
+  color: '#fff', // Couleur blanche pour les liens dans le header
+  fontSize: '18px',
+  fontWeight: 'bold',
+  whiteSpace: 'nowrap', // Assurer que les liens restent sur une seule ligne
+};
+
+// Style pour le header
+const headerStyle = {
+  backgroundColor: '#9054e3', // Mise à jour de la couleur du header
+  width: '100vw',
+  padding: '20px 0',
+  boxSizing: 'border-box',
+  position: 'sticky',
+  top: '0',
+  zIndex: '100',
+};
+
+// Style pour le footer
+const footerStyle = {
+  backgroundColor: '#431880',
+  color: '#fff',
+  textAlign: 'center',
+  padding: '20px 0',
+  width: '100vw',
+  position: 'fixed',
+  bottom: '0',
+};
+
+function App() {
+  const [darkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
 
-  const headerStyle = {
-    backgroundColor: darkMode ? '#2a2a4a' : '#f0e6ff',
-  };
-
-  const navLinkStyle = {
-    padding: '10px 20px',
-    borderRadius: '5px',
-    textDecoration: 'none',
-    color: darkMode ? 'white' : '#431880',
-    backgroundColor: darkMode ? '#431880' : 'white',
-    transition: 'all 0.3s ease',
-    border: `2px solid ${darkMode ? '#9054e3' : '#431880'}`,
-  };
-
-  const cardStyle = {
-    padding: '20px',
-    borderRadius: '10px',
-    transition: 'transform 0.3s',
-  };
-
   return (
-    <div style={{
-      fontFamily: 'Arial, sans-serif',
-      margin: 0,
-      padding: 0,
-      backgroundColor: darkMode ? '#1a1a2e' : '#ffffff',
-      color: darkMode ? '#ffffff' : '#431880',
-      transition: 'background-color 0.3s, color 0.3s',
-    }}>
+    <div style={{ backgroundColor: darkMode ? '#1a1a2e' : '#f9f9f9', width: '100vw', height: '100vh', margin: '0', padding: '0' }}>
+      {/* Header */}
       <header style={headerStyle}>
         <div style={{
-          maxWidth: '1200px',
+          maxWidth: '1400px',
           margin: '0 auto',
-          padding: '20px',
+          padding: '0 20px',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
+          width: '100%',
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <img src="/SocialeSafe.png" alt="Logo Social Safe" style={{ width: '40px', height: '40px', borderRadius: '50%' }} />
-            <span style={{ fontSize: '24px', fontWeight: 'bold', color: '#431880' }}>Social Safe</span>
+            <span style={{ fontSize: '24px', fontWeight: 'bold', color: '#fff' }}>Social Safe</span> {/* Couleur blanche */}
           </div>
-          <nav style={{ display: 'flex', gap: '10px' }}>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '20px' }}> {/* Ajustement pour aligner les liens avec le bouton dark mode */}
             <a href="#" style={navLinkStyle}>Accueil</a>
             <a href="#" style={navLinkStyle}>À propos</a>
             <a href="#" style={navLinkStyle}>Contact</a>
-            <button onClick={toggleDarkMode} style={{...navLinkStyle, cursor: 'pointer'}}>
+            <button onClick={toggleDarkMode} style={{ 
+              ...navLinkStyle, 
+              cursor: 'pointer', 
+              background: 'none', 
+              border: 'none', 
+              padding: '0',
+              marginLeft: '10px' // Ajustement pour éviter que le bouton soit trop à droite
+            }}>
               {darkMode ? '☀️' : '🌙'}
             </button>
           </nav>
         </div>
       </header>
 
-      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-        <section style={{ textAlign: 'center', padding: '50px 0' }}>
-          <h1 style={{ fontSize: '48px', marginBottom: '20px', color: darkMode ? '#ffffff' : '#431880' }}>Bienvenue sur Social Safe</h1>
-          <p style={{ fontSize: '18px', maxWidth: '600px', margin: '0 auto', color: darkMode ? '#ffffff' : '#431880' }}>
-            Votre plateforme d'apprentissage en ligne de confiance pour comprendre et naviguer dans les complexités des interactions sociales à l'ère numérique.
-          </p>
-        </section>
-
-        <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
-          <div style={{ ...cardStyle, backgroundColor: '#431880', color: 'white' }}>
-            <h2 style={{ fontSize: '24px', marginBottom: '10px' }}>Quiz +18 ans</h2>
-            <p style={{ marginBottom: '20px' }}>
-              Testez vos connaissances sur les sujets avancés de la sécurité en ligne, de la confidentialité et de la citoyenneté numérique. Adapté aux adultes et aux adolescents plus âgés.
-            </p>
-            <a href="/quiz-18-plus" style={{...navLinkStyle, backgroundColor: 'white', color: '#431880', display: 'inline-block'}}>
-              Commencer le Quiz 18+
-            </a>
-          </div>
-          <div style={{ ...cardStyle, backgroundColor: '#9054e3', color: 'white' }}>
-            <h2 style={{ fontSize: '24px', marginBottom: '10px' }}>Quizz -18 ans</h2>
-            <p style={{ marginBottom: '20px' }}>
-              Apprenez la sécurité sur Internet, la prévention du cyberharcèlement et l'utilisation responsable des médias sociaux. Conçu pour les enfants et les jeunes adolescents.
-            </p>
-            <a href="/quiz-moins-18" style={{...navLinkStyle, backgroundColor: 'white', color: '#9054e3', display: 'inline-block'}}>
-              Commencer le Quizz -18 ans
-            </a>
-          </div>
-        </section>
-
-        <section style={{ marginTop: '50px', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '32px', marginBottom: '30px', color: darkMode ? '#ffffff' : '#431880' }}>Pourquoi choisir Social Safe ?</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
-            <div style={{ ...cardStyle, backgroundColor: 'rgba(67, 24, 128, 0.1)' }}>
-              <h3 style={{ fontSize: '20px', marginBottom: '10px', color: '#431880' }}>Contenu adapté à l'âge</h3>
-              <p>Des quiz spécialement conçus pour différents groupes d'âge, assurant un apprentissage pertinent et approprié.</p>
+      {/* Body */}
+      <main style={{ padding: '20px', maxWidth: '1400px', margin: '0 auto' }}>
+        <h1 style={{ textAlign: 'center', color: '#431880' }}>Bienvenue sur Social Safe</h1>
+        <p style={{ textAlign: 'center', color: darkMode ? '#fff' : '#000' }}>
+          Votre plateforme d'apprentissage en ligne de confiance pour comprendre et naviguer dans les complexités des interactions sociales à l'ère numérique.
+        </p>
+        {/* Ajout d'une marge supérieure pour espacer le texte des cartes */}
+        <div style={{ display: 'flex', justifyContent: 'space-around', marginTop: '40px' }}> {/* Augmenter la marge ici */}
+          <div style={{ 
+            backgroundColor: '#431880', 
+            padding: '20px', 
+            borderRadius: '8px', 
+            color: '#fff', 
+            width: '45%', 
+            textAlign: 'center', // Centrer tout le contenu
+            display: 'flex', 
+            flexDirection: 'column', 
+            justifyContent: 'space-between', // Alignement vertical
+            alignItems: 'center', // Centrer horizontalement le contenu
+          }}>
+            <div style={{ maxWidth: '90%' }}> {/* Limiter la largeur du texte */}
+              <h3>Quiz +18 ans</h3>
+              <p>
+                Testez vos connaissances sur les sujets avancés de la sécurité en ligne, de la confidentialité et de la citoyenneté numérique. Adapté aux adultes et aux adolescents plus âgés.
+              </p>
             </div>
-            <div style={{ ...cardStyle, backgroundColor: 'rgba(144, 84, 227, 0.1)' }}>
-              <h3 style={{ fontSize: '20px', marginBottom: '10px', color: '#9054e3' }}>Apprentissage interactif</h3>
-              <p>Engagez-vous dans un apprentissage interactif qui rend l'éducation à la sécurité en ligne amusante et mémorable.</p>
-            </div>
-            <div style={{ ...cardStyle, backgroundColor: 'rgba(67, 24, 128, 0.1)' }}>
-              <h3 style={{ fontSize: '20px', marginBottom: '10px', color: '#431880' }}>Mises à jour régulières</h3>
-              <p>Contenu constamment mis à jour pour refléter les dernières tendances et menaces du monde numérique.</p>
+            <div style={{ marginTop: '20px', width: '100%' }}> {/* Ajuster la largeur ici */}
+              <a href="/quiz18" style={{ // Ajout de l'élément <a> pour le lien
+                padding: '10px 20px', 
+                backgroundColor: '#fff', 
+                color: '#431880', 
+                border: 'none', 
+                borderRadius: '5px', 
+                cursor: 'pointer', 
+                display: 'inline-block', // Changer le display pour être un lien
+                width: '80%', // Largeur uniforme pour les boutons
+                maxWidth: '300px', // Largeur maximale pour éviter qu'ils soient trop larges
+                textAlign: 'center' // Centrer le texte du lien
+              }}>
+                Commencer le Quiz 18+
+              </a>
             </div>
           </div>
-        </section>
+          <div style={{ 
+            backgroundColor: '#9c4ccf', 
+            padding: '20px', 
+            borderRadius: '8px', 
+            color: '#fff', 
+            width: '45%', 
+            textAlign: 'center', // Centrer tout le contenu
+            display: 'flex', 
+            flexDirection: 'column', 
+            justifyContent: 'space-between', // Alignement vertical
+            alignItems: 'center', // Centrer horizontalement le contenu
+          }}>
+            <div style={{ maxWidth: '90%' }}> {/* Limiter la largeur du texte */}
+              <h3>Quiz -18 ans</h3>
+              <p>
+                Apprenez la sécurité sur Internet, la prévention du cyberharcèlement et l'utilisation responsable des médias sociaux. Conçu pour les enfants et les jeunes adolescents.
+              </p>
+            </div>
+            <div style={{ marginTop: '20px', width: '100%' }}> {/* Ajuster la largeur ici */}
+              <a href="/quiz-18" style={{ // Ajout de l'élément <a> pour le lien
+                padding: '10px 20px', 
+                backgroundColor: '#fff', 
+                color: '#431880', 
+                border: 'none', 
+                borderRadius: '5px', 
+                cursor: 'pointer', 
+                display: 'inline-block', // Changer le display pour être un lien
+                width: '80%', // Largeur uniforme pour les boutons
+                maxWidth: '300px', // Largeur maximale pour éviter qu'ils soient trop larges
+                textAlign: 'center' // Centrer le texte du lien
+              }}>
+                Commencer le Quiz -18 ans
+              </a>
+            </div>
+          </div>
+        </div>
       </main>
 
-      <footer style={{ textAlign: 'center', padding: '20px 0', borderTop: `1px solid ${darkMode ? '#2a2a4a' : '#eaeaea'}` }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <p style={{ color: darkMode ? '#ffffff' : '#431880' }}>&copy; 2024 Social Safe. Tous droits réservés.</p>
-        </div>
+      {/* Footer */}
+      <footer style={footerStyle}>
+        <p>&copy; 2024 Social Safe. Tous droits réservés.</p>
       </footer>
     </div>
   );
 }
+
+export default App;
